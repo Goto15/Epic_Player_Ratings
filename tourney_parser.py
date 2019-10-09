@@ -44,6 +44,7 @@ def load_all_players(tournament_list):
 def player_ratings_to_JSON(player_ratings, file_name):
     final_ratings = {}
     final_ratings['Players'] = []
+    file_name = "Player_Ratings/" + file_name
 
     for each in player_ratings:
         final_ratings['Players'].append({
