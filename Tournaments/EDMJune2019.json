@@ -1,0 +1,99 @@
+{
+    "info": {
+        "name": "Epic Digital Monthly",
+        "date": "2019-06-29",
+        "format": "Limited"
+    },
+    "games": [{
+        "players": [
+            "TatDaddy",
+            "livious"
+        ],
+        "winner": "TatDaddy"
+        },
+        {
+        "players": [
+            "EmperorOTide",
+            "DanGing"
+        ],
+        "winner": "EmperorOTide"
+        },
+        {
+        "players": [
+            "Atlanta",
+            "TomEpicGamin"
+        ],
+        "winner": "Atlanta"
+        },
+        {
+        "players": [
+            "Magnetic",
+            "noverb"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "livious",
+            "noverb"
+        ],
+        "winner": "livious"
+        },
+        {
+        "players": [
+            "DanGing",
+            "TomEpicGamin"
+        ],
+        "winner": "DanGing"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "Atlanta"
+        ],
+        "winner": "TatDaddy"
+        },
+        {
+        "players": [
+            "EmperorOTide",
+            "Magnetic"
+        ],
+        "winner": "EmperorOTide"
+        },
+        {
+        "players": [
+            "DanGing",
+            "Magnetic"
+        ],
+        "winner": "DanGing"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "EmperorOTide"
+        ],
+        "winner": "TatDaddy"
+        },
+        {
+        "players": [
+            "TomEpicGamin",
+            "noverb"
+        ],
+        "winner": "TomEpicGamin"
+        },
+        {
+        "players": [
+            "livious",
+            "Atlanta"
+        ],
+        "winner": "livious"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "livious"
+        ],
+        "winner": "TatDaddy"
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "info": {
+        "name": "Epic Digital Monthly",
+        "date": "2019-05-25",
+        "format": "Constructed"
+    },
+    "games": [{
+        "players": [
+            "Magnetic",
+            "TomEpicGamin"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "Atlanta",
+            "TatDaddy"
+        ],
+        "winner": "Atlanta"
+        },
+        {
+        "players": [
+            "bmcfluff",
+            "nhblandin"
+        ],
+        "winner": "bmcfluff"
+        },
+        {
+        "players": [
+            "noverb",
+            "livious"
+        ],
+        "winner": "noverb"
+        },
+        {
+        "players": [
+            "nhblandin",
+            "TomEpicGamin"
+        ],
+        "winner": "nhblandin"
+        },
+        {
+        "players": [
+            "Magnetic",
+            "Atlanta"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "bmcfluff",
+            "noverb"
+        ],
+        "winner": "bmcfluff"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "livious"
+        ],
+        "winner": "TatDaddy"
+        },
+        {
+        "players": [
+            "livious",
+            "TomEpicGamin"
+        ],
+        "winner": "livious"
+        },
+        {
+        "players": [
+            "Magnetic",
+            "bmcfluff"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "nhblandin",
+            "Atlanta"
+        ],
+        "winner": "nhblandin"
+        },
+        {
+        "players": [
+            "noverb",
+            "TatDaddy"
+        ],
+        "winner": "noverb"
+        }
+    ]
+}

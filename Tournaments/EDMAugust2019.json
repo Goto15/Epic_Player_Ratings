@@ -1,0 +1,79 @@
+{
+    "info": {
+        "name": "Epic Digital Monthly",
+        "date": "2019-08-31",
+        "format": "Constructed"
+    },
+    "games": [
+        {
+            "players": [
+                "TatDaddy",
+                "EPICat"
+            ],
+            "winner": "TatDaddy"
+        },
+        {
+            "players": [
+                "Atlanta",
+                "DanGing"
+            ],
+            "winner": "Atlanta"
+        },
+        {
+            "players": [
+                "Magnetic",
+                "noverb"
+            ],
+            "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "Magnetic",
+            "Atlanta"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "DanGing"
+        ],
+        "winner": "TatDaddy"
+        },
+        {
+        "players": [
+            "EPICat",
+            "noverb"
+        ],
+        "winner": "EPICat"
+        },
+        {
+        "players": [
+            "Atlanta",
+            "EPICat"
+        ],
+        "winner": "Atlanta"
+        },
+        {
+        "players": [
+            "noverb",
+            "DanGing"
+        ],
+        "winner": "noverb"
+        },
+        {
+        "players": [
+            "Magnetic",
+            "TatDaddy"
+        ],
+        "winner": "Magnetic"
+        },
+        {
+        "players": [
+            "TatDaddy",
+            "Magnetic"
+        ],
+        "winner": "TatDaddy"
+        }
+    ]
+}
