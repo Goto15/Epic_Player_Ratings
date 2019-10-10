@@ -3,13 +3,13 @@ import math
 
 # Function to calculate the Probability between 2 ratings
 def Probability(r1, r2):
-    return 1.0 * 1.0 / (1 + 1.0 * math.pow(10, 1.0 * (r1 - r2) / 400))
+    return 1 / (1 + math.pow(10, (r1 - r2) / 400))
 
 
 # Function to calculate Elo rating
+# when player A wins against player B
 # K is a constant
-# d determines whether player A wins or Player B
-def EloRating(Ra, Rb, K, d):
+def EloRating(Ra, Rb, K):
 
     # To calculate the Winning probability of Player B
     Pb = Probability(Ra, Rb)
@@ -17,15 +17,8 @@ def EloRating(Ra, Rb, K, d):
     # To calculate the Winning probability of Player A
     Pa = Probability(Rb, Ra)
 
-    # Case -1 When Player A wins updating the Elo Ratings
-    if (d == 1):
-        Ra = Ra + K * (1 - Pa)
-        Rb = Rb + K * (0 - Pb)
-
-    # Case -2 When Player B wins updating the Elo Ratings
-    else:
-        Ra = Ra + K * (0 - Pa)
-        Rb = Rb + K * (1 - Pb)
+    Ra += K * (1 - Pa)
+    Rb += K * (0 - Pb)
 
     return [Ra, Rb]
 
@@ -39,32 +32,17 @@ def EloRating(Ra, Rb, K, d):
 # has ever played.
 def calc_comprehensive_Elo(tournament_data, player_ratings):
     for games in tournament_data:
-        for i in range(len(games['games'])):
-            temp_winner = games['games'][i]['winner']
-            player_one = games['games'][i]['players'][0]
-            player_two = games['games'][i]['players'][1]
+        for game in games['games']:
+            temp_winner = game['winner']
+            assert temp_winner in game['players'] and len(game['players']) == 2
+            temp_loser = next(filter(lambda x: x != temp_winner, game['players']))
 
             for each in player_ratings:
-                if player_one == each.name:
-                    player_one_rate = each.rating
-                if player_two == each.name:
-                    player_two_rate = each.rating
+                if temp_winner == each.name:
+                    winner = each
+                if temp_loser == each.name:
+                    loser = each
 
-            if temp_winner == player_one:
-                new_ratings = EloRating(player_one_rate, player_two_rate, 40, 1)
-            if temp_winner == player_two:
-                new_ratings = EloRating(player_two_rate, player_one_rate, 40, 1)
-
-            for each in player_ratings:
-                if (player_one == temp_winner):
-                    if (player_one == each.name):
-                        each.rating = new_ratings[0]
-                    if (player_two == each.name):
-                        each.rating = new_ratings[1]
-                if (player_two == temp_winner):
-                    if (player_two == each.name):
-                        each.rating = new_ratings[0]
-                    if (player_one == each.name):
-                        each.rating = new_ratings[1]
-
-    return player_ratings
+            new_ratings = EloRating(winner.rating, loser.rating, 40)
+            winner.rating = new_ratings[0]
+            loser.rating = new_ratings[1]
