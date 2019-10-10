@@ -1,9 +1,10 @@
 import math
 
 
-# Function to calculate the Probability between 2 ratings
+# Calculates the Probability between 2 ratings
 def Probability(r1, r2):
-    return 1 / (1 + math.pow(10, (r1 - r2) / 400))
+    return (1.0 * (1.0 / (1 + 1.0 * math.pow(10, 1.0 * (r1 - r2) / 400))))
+    # return 1 / (1 + math.pow(10, (r1 - r2) / 400))
 
 
 # Function to calculate Elo rating

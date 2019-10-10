@@ -1,5 +1,5 @@
 from class_player import Player
-from elo_calc import calc_comprehensive_Elo
+from elo_calc import calc_comprehensive_Elo, Probability
 from tourney_parser import (
     load_ordered_tournaments,
     load_all_players,
@@ -12,11 +12,12 @@ from pathlib import Path
 
 parser = argparse.ArgumentParser(description='Computes ELO ratings')
 parser.add_argument('-d', dest='dataDir', type=Path, metavar='DATA_DIR',
-    help='Default: whatever is in "path.json"')
-parser.add_argument('-o', dest='outDir', type=Path, metavar='OUT_DIR', default=Path("./Player_Ratings/"),
-    help='Generated ratings go here. Default: ./Player_Ratings/')
+                    help='Default: whatever is in "path.json"')
+parser.add_argument('-o', dest='outDir', type=Path, metavar='OUT_DIR',
+                    default=Path("./Player_Ratings/"),
+                    help='Generated ratings go here. Default: ./Player_Ratings/')
 args = parser.parse_args()
-if args.dataDir != None:
+if args.dataDir is not None:
     path = args.dataDir
 else:
     # Read in the file path from the JSON file
