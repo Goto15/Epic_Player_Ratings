@@ -3,6 +3,6 @@
 
 
 class Player:
-    def __init__(self, name, rating=1600):
+    def __init__(self, name, Elo=1600):
         self.name = name
-        self.rating = rating
+        self.Elo = Elo

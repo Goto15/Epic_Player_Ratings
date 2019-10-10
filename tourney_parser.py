@@ -31,15 +31,15 @@ def load_all_players(tournament_list):
 
 # Create the JSON file from the player ratings list
 def player_ratings_to_JSON(player_ratings, path):
-    final_ratings = {
+    final_Elo = {
         'Players': [
             {
                 'name': each.name,
-                'rating': each.rating
+                'Elo': each.Elo
             }
             for each in player_ratings
         ]
     }
 
     with open(path, 'w') as outfile:
-        json.dump(final_ratings, outfile, indent=4)
+        json.dump(final_Elo, outfile, indent=4)

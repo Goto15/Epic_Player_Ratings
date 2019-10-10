@@ -43,6 +43,6 @@ def calc_comprehensive_Elo(tournament_data, player_ratings):
                 if temp_loser == each.name:
                     loser = each
 
-            new_ratings = EloRating(winner.rating, loser.rating, 40)
-            winner.rating = new_ratings[0]
-            loser.rating = new_ratings[1]
+            new_ratings = EloRating(winner.Elo, loser.Elo, 40)
+            winner.Elo = new_ratings[0]
+            loser.Elo = new_ratings[1]

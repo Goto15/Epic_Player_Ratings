@@ -33,11 +33,11 @@ player_Elo_ratings = [Player(each) for each in player_names]
 
 # Calculate and sort player Elo ratings from highest to lowest
 calc_comprehensive_Elo(tournament_data, player_Elo_ratings)
-player_Elo_ratings.sort(key=lambda p: -p.rating)
+player_Elo_ratings.sort(key=lambda p: -p.Elo)
 
 # Rounds each rating to a beautiful round integer
 for each in player_Elo_ratings:
-    each.rating = int(round(each.rating))
+    each.Elo = int(round(each.Elo))
 
 args.outDir.mkdir(exist_ok=True)
 # Creates the JSON from the player_ratings list
