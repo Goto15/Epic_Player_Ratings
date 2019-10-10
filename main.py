@@ -36,10 +36,6 @@ player_Elo_ratings = [Player(each) for each in player_names]
 calc_comprehensive_Elo(tournament_data, player_Elo_ratings)
 player_Elo_ratings.sort(key=lambda p: -p.Elo)
 
-# Rounds each rating to a beautiful round integer
-for each in player_Elo_ratings:
-    each.Elo = int(round(each.Elo))
-
 args.outDir.mkdir(exist_ok=True)
 # Creates the JSON from the player_ratings list
 player_ratings_to_JSON(player_Elo_ratings, args.outDir / "Elo_ratings.json")

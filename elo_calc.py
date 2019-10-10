@@ -3,7 +3,7 @@ import math
 
 # Calculates the Probability between 2 ratings
 def Probability(r1, r2):
-    return (1.0 * (1.0 / (1 + 1.0 * math.pow(10, 1.0 * (r1 - r2) / 400))))
+    return 1 / (1 + math.pow(10, (r1 - r2) / 400))
 
 
 # Function to calculate Elo rating
@@ -17,8 +17,12 @@ def EloRating(Ra, Rb, K):
     # To calculate the Winning probability of Player A
     Pa = Probability(Rb, Ra)
 
-    Ra += K * (1 - Pa)
-    Rb += K * (0 - Pb)
+    # Calculate new ratings and then round them
+    # One side effect of this is that players >1600 could round up one point
+    # and players <1600 could be rounded down 1 point. Will need to revisit
+    # in the future.
+    Ra += round(K * (1 - Pa))
+    Rb += round(K * (0 - Pb))
 
     return [Ra, Rb]
 
