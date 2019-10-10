@@ -7,20 +7,9 @@ import os
 # Given a directory of JSON files
 # load a chronological list of games played by all players
 def load_ordered_tournaments(path):
-    data = []
-    files = []
-
-    for r, d, f in os.walk(path):
-        for file in f:
-            if '.json' in file:
-                files.append(os.path.join(r, file))
-
-    for f in files:
-        with open(f) as jsonfile:
-            data.append(json.load(jsonfile))
-
-    data = sorted(data, key=lambda data: data['info']['date'])
-
+    files = path.glob("*.json")
+    data = [json.loads(f.read_text()) for f in files]
+    data.sort(key=lambda item: item['info']['date'])
     return data
 
 
@@ -35,22 +24,22 @@ def load_all_players(tournament_list):
             if games['games'][each]['players'][1] not in player_list:
                 player_list.append(games['games'][each]['players'][1])
 
-    player_list = sorted(player_list, key=lambda player_list: player_list.upper())
+    player_list.sort(key=lambda item: item.upper())
 
     return player_list
 
 
 # Create the JSON file from the player ratings list
-def player_ratings_to_JSON(player_ratings, file_name):
-    final_ratings = {}
-    final_ratings['Players'] = []
-    file_name = "Player_Ratings/" + file_name
+def player_ratings_to_JSON(player_ratings, path):
+    final_ratings = {
+        'Players': [
+            {
+                'name': each.name,
+                'rating': each.rating
+            }
+            for each in player_ratings
+        ]
+    }
 
-    for each in player_ratings:
-        final_ratings['Players'].append({
-            'name': each.name,
-            'rating': each.rating
-        })
-
-    with open(file_name, 'w') as outfile:
+    with open(path, 'w') as outfile:
         json.dump(final_ratings, outfile, indent=4)
