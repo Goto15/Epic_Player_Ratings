@@ -21,8 +21,8 @@ def EloRating(Ra, Rb, K):
     # One side effect of this is that players >1600 could round up one point
     # and players <1600 could be rounded down 1 point. Will need to revisit
     # in the future.
-    Ra += round(K * (1 - Pa))
-    Rb += round(K * (0 - Pb))
+    Ra += K * (1 - Pa)
+    Rb += K * (0 - Pb)
 
     return [Ra, Rb]
 
@@ -50,3 +50,6 @@ def calc_comprehensive_Elo(tournament_data, player_ratings):
             new_ratings = EloRating(winner.Elo, loser.Elo, 40)
             winner.Elo = new_ratings[0]
             loser.Elo = new_ratings[1]
+
+    for each in player_ratings:
+        each.Elo = round(each.Elo)
