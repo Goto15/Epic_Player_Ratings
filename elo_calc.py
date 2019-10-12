@@ -1,4 +1,5 @@
 import math
+from class_player import Player
 
 
 # Calculates the Probability between 2 ratings
@@ -51,5 +52,4 @@ def calc_comprehensive_Elo(tournament_data, player_ratings):
             winner.Elo = new_ratings[0]
             loser.Elo = new_ratings[1]
 
-    for each in player_ratings:
-        each.Elo = round(each.Elo)
+    player_ratings = [Player.round_Elo(each) for each in player_ratings]
