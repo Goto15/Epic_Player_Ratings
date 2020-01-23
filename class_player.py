@@ -9,4 +9,3 @@ class Player:
 
     def round_Elo(player):
         player.Elo = int(round(player.Elo))
-        return player
