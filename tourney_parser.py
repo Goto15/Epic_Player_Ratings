@@ -13,6 +13,7 @@ def load_ordered_tournaments(path):
     return data
 
 
+# TODO add games, wins/losses, # of games played, format ratings etc.
 # Given a list of tournament games return a list of all players
 def load_all_players(tournament_list):
     player_list = []

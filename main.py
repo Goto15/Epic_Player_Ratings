@@ -1,5 +1,8 @@
 from class_player import Player
-from elo_calc import calc_comprehensive_Elo, Probability
+from elo_calc import (
+    calc_comprehensive_Elo,
+    Probability
+)
 from tourney_parser import (
     load_ordered_tournaments,
     load_all_players,
@@ -32,6 +35,7 @@ player_names = load_all_players(tournament_data)
 # Create new ratings for each player
 player_Elo_ratings = [Player(each) for each in player_names]
 
+# TODO add more data points listed in the Player class
 # Calculate and sort player Elo ratings from highest to lowest
 calc_comprehensive_Elo(tournament_data, player_Elo_ratings)
 player_Elo_ratings.sort(key=lambda p: -p.Elo)
